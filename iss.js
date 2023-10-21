@@ -2,7 +2,9 @@ const { parse } = require('path');
 const request = require('request');
 const api = 'https://api.ipify.org?format=json';
 const geoAPIEndpoint = "http://ipwho.is/";
-//const geoAPIEndpoint = "https://ipwho.is/42";  //test
+
+const issAPI = 'https://iss-flyover.herokuapp.com/json/?lat=YOUR_LAT_INPUT_HERE&lon=YOUR_LON_INPUT_HERE'
+
 
 const fetchMyIP = function(callback) {
   request(api, (error, response, body) => {
@@ -40,4 +42,8 @@ const fetchCoordsByIP = function(ip, callback) {
   });
 };
 
-module.exports = { fetchMyIP, fetchCoordsByIP };
+const fetchISSFlyOverTimes = function (coords, callback) {
+  
+}
+
+module.exports = { fetchMyIP, fetchCoordsByIP, fetchISSFlyOverTimes };
